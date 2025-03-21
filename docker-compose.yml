@@ -1,0 +1,9 @@
+services:
+  pycades4:
+    container_name: pycades4
+    build:
+      dockerfile: Dockerfile
+    command: poetry run uvicorn main:app --host 0.0.0.0 --port 80
+    restart: always
+    ports:
+      - '127.0.0.1:3780:80'
